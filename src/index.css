@@ -660,3 +660,122 @@ html, body {
   max-height: 120px;
   overflow-y: auto;
 }
+/* ===============================
+   ADMIN PAGE LAYOUT
+================================ */
+
+.admin-page {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: auto;
+  overflow-x: hidden; /* 🔥 PREVENT OVERFLOW */
+}
+
+.admin-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+/* ===============================
+   MESSAGE GRID
+================================ */
+
+.messages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+/* ===============================
+   MESSAGE CARD
+================================ */
+
+.message-card {
+  padding: 1rem;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  word-break: break-word;      /* 🔥 FIX LONG TEXT */
+  overflow-wrap: break-word;
+}
+
+/* ===============================
+   HEADER
+================================ */
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.message-header h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* ===============================
+   EMAIL + MESSAGE
+================================ */
+
+.email {
+  font-size: 0.85rem;
+  color: #a8b3cf;
+  word-break: break-all; /* 🔥 EMAIL FIX */
+}
+
+.message-text {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* ===============================
+   DELETE BUTTON
+================================ */
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: tomato;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ===============================
+   EMPTY STATE
+================================ */
+
+.empty-text {
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* ===============================
+   MOBILE FIX
+================================ */
+
+@media (max-width: 480px) {
+  .admin-title {
+    font-size: 1.4rem;
+  }
+
+  .message-card {
+    padding: 0.8rem;
+  }
+
+  .message-header h4 {
+    font-size: 0.95rem;
+  }
+
+  .delete-btn {
+    font-size: 1rem;
+  }
+}

@@ -22,22 +22,23 @@ export default function Contact() {
     setSuccess("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/messages", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(form)
-      });
+      const res = await fetch(
+        import.meta.env.VITE_API_URL + "/messages",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(form)
+        }
+      );
 
-      if (!res.ok) {
-        throw new Error("Failed to send message");
-      }
+      if (!res.ok) throw new Error();
 
       setSuccess("Message sent successfully 🚀");
       setForm({ name: "", email: "", message: "" });
 
-    } catch (err) {
+    } catch {
       setError("Something went wrong ❌");
     } finally {
       setLoading(false);
