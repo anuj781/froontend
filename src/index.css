@@ -779,3 +779,85 @@ html, body {
     font-size: 1rem;
   }
 }
+/* ================= ADMIN SIDEBAR ================= */
+
+.admin-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+
+  /* 🔥 SOLID DARK BACKGROUND */
+  background: #0f172a; /* slate dark */
+  color: #fff;
+
+  padding: 24px;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Title */
+.admin-sidebar h3 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #38bdf8;
+}
+
+/* Links */
+.admin-sidebar a {
+  text-decoration: none;
+  color: #cbd5f5;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.admin-sidebar a:hover {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+}
+
+/* Active route */
+.admin-sidebar a.active {
+  background: rgba(56, 189, 248, 0.25);
+  color: #38bdf8;
+}
+
+/* Logout button */
+.logout-btn {
+  margin-top: auto;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #ef4444;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .admin-sidebar.show {
+    transform: translateX(0);
+  }
+}

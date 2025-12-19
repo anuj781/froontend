@@ -9,7 +9,8 @@ export default function AdminSidebar({ open, setOpen }) {
   };
 
   return (
-    <aside className={`admin-sidebar glass ${open ? "show" : ""}`}>
+    <aside className={`admin-sidebar ${open ? "show" : ""}`}>
+
       <h3>Admin</h3>
 
       <NavLink to="/admin" onClick={() => setOpen(false)}>
