@@ -8,20 +8,25 @@ export default function AdminSidebar({ open, setOpen }) {
     navigate("/admin/login");
   };
 
+  const closeOnMobile = () => {
+    if (window.innerWidth <= 768) {
+      setOpen(false);
+    }
+  };
+
   return (
     <aside className={`admin-sidebar ${open ? "show" : ""}`}>
-
       <h3>Admin</h3>
 
-      <NavLink to="/admin" onClick={() => setOpen(false)}>
+      <NavLink to="/admin" onClick={closeOnMobile}>
         Dashboard
       </NavLink>
 
-      <NavLink to="/admin/messages" onClick={() => setOpen(false)}>
+      <NavLink to="/admin/messages" onClick={closeOnMobile}>
         Messages
       </NavLink>
 
-      <NavLink to="/admin/services" onClick={() => setOpen(false)}>
+      <NavLink to="/admin/services" onClick={closeOnMobile}>
         Services
       </NavLink>
 
