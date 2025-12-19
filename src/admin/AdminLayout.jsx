@@ -6,10 +6,13 @@ export default function AdminLayout() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="admin-container">
+    <div className="admin-layout">
       {/* Mobile Top Bar */}
-      <header className="admin-topbar glass">
-        <button className="menu-btn" onClick={() => setOpen(!open)}>
+      <header className="admin-topbar">
+        <button
+          className="menu-btn"
+          onClick={() => setOpen(prev => !prev)}
+        >
           ☰
         </button>
         <h3>Admin Panel</h3>
@@ -18,8 +21,8 @@ export default function AdminLayout() {
       {/* Sidebar */}
       <AdminSidebar open={open} setOpen={setOpen} />
 
-      {/* Content */}
-      <main className="admin-content">
+      {/* Main Content */}
+      <main className="admin-content" onClick={() => setOpen(false)}>
         <Outlet />
       </main>
     </div>
